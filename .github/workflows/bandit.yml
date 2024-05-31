@@ -24,6 +24,9 @@ jobs:
           exit_zero: true # optional, default is DEFAULT
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
       - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
+        env:
+         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         ISSUE: ${{ github.event.issue.html_url }}
          
 
       
