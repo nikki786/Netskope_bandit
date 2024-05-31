@@ -26,9 +26,9 @@ jobs:
         with: 
           exit_zero: true # optional, default is DEFAULT
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
+          level: HIGH
         
       - name: Add Comment
-        if: level==HIGH
         run: gh issue comment $STATUS --body "Block PR!"
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
