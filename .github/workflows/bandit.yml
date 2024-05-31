@@ -39,9 +39,10 @@ jobs:
          #ISSUE: ${{ github.event.number }}
         run: |
              ls -la
-             #cat results.sarif
-             if ls 
-             gh issue comment 12 --body "Block PR!"
+             if test -f results.sarif; then
+             echo "File exists."
+             fi
+ 
            
            
           
