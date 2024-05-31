@@ -41,7 +41,6 @@ jobs:
              gh issue comment 12 --body "Block PR!"
              cat results.sarif
              ls -la
-             gh run view --job JOB_ID --log
              severity_count=$(egrep "Severity:\sHigh" results.sarif | wc -l)
              echo $severity_count
              - |
