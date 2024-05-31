@@ -40,8 +40,8 @@ jobs:
         run: |
              ls -la
              cat results.sarif
-             chmod +x results.sarif
              if grep -E "SEVERITY.HIGH": ^[1-9]\d*$, "results.sarif"; then
+             echo "test"
              gh issue comment 12 --body "Block PR!"
              fi
              - gh issue comment 12 --body "Successful"
