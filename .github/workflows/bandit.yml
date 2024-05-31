@@ -42,7 +42,7 @@ jobs:
              if test -f results.sarif; then
              echo "File exists."
              fi
-             if grep -E '\"SEVERITY.HIGH\": [^0]+' results.sarif; then
+             if egrep -c '\"SEVERITY.HIGH\": [^0]+' results.sarif; then
              echo "SEVERITY.HIGH > 0"
              fi
              echo "SEVERITY.HIGH == 0"
