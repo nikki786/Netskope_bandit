@@ -39,9 +39,9 @@ jobs:
          #ISSUE: ${{ github.event.number }}
         run: |
              gh issue comment 12 --body "Block PR!"
-             cat results.sarif
+             #cat results.sarif
              ls -la
-             severity_count=$(egrep "SEVERITY:\sHIGH" results.sarif | wc -l)
+             severity_count=$(egrep "SEVERITY:\sHIGH" ./results.sarif | wc -l)
              echo $severity_count
              - |
              if [ $severity_count -neq 0 ]; then
