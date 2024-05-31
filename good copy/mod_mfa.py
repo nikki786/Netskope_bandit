@@ -1,12 +1,13 @@
-
+import sqlite3
+from flask import Blueprint, render_template, redirect, request, g, session, make_response, flash
+import libuser
+import libsession
+import libmfa
+import pyotp
+import qrcode
 import base64
 from io import BytesIO
 
-import pyotp
-import qrcode
-from flask import Blueprint, flash, g, redirect, render_template, request
-
-import libmfa
 
 mod_mfa = Blueprint('mod_mfa', __name__, template_folder='templates')
 
@@ -60,5 +61,9 @@ def do_mfa_disable():
     if 'username' not in g.session:
         return redirect('/user/login')
 
+    if 'referer' not in request.headers or request.headers['referer'] != 'vulpy.com':
+        return redirect('/user/login')
+
     libmfa.mfa_disable(g.session['username'])
     return redirect('/mfa/')
+

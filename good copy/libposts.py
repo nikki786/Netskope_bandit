@@ -27,6 +27,7 @@ def post(username, text):
 
     rows = c.execute("INSERT INTO posts (username, text, date) VALUES (?, ?, DateTime('now'))", (username, text)) #WHERE username = ?", (username,)).fetchall()
     conn.commit()
+    #posts = [ dict(zip(row.keys(), row)) for row in rows ]
 
     return True
 
