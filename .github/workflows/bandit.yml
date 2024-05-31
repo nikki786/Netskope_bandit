@@ -41,7 +41,7 @@ jobs:
              cat results.sarif
              ls -la
              gh run view --job JOB_ID --log
-             severity_count=$(egrep "Severity:\sHigh" my_file.txt | wc -l)
+             severity_count=$(egrep "Severity:\sHigh" results.sarif | wc -l)
              echo $severity_count
           
         
