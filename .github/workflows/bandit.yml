@@ -42,7 +42,7 @@ jobs:
              if test -f results.sarif; then
              echo "File exists."
              fi
-             if grep -q SEVERITY.HIGH results.sarif; then
+             if grep -q "SEVERITY.HIGH": 4 results.sarif; then
              echo "Found SEVERITY.HIGH"
              fi
  
