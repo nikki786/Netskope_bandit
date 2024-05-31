@@ -44,6 +44,11 @@ jobs:
              gh run view --job JOB_ID --log
              severity_count=$(egrep "Severity:\sHigh" results.sarif | wc -l)
              echo $severity_count
+             - |
+             if [ $severity_count -neq 0 ]; then
+             exit 1
+             fi
+             - echo ${TF_ROOT}
           
         
       
