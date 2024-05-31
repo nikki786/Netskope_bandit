@@ -42,7 +42,7 @@ jobs:
              #cat results.sarif
              ls -la
              #severity_count=$(egrep "SEVERITY:\sHIGH" ./results.sarif | wc -l)
-             severity_count=$(awk 'SEVERITY:HIGH += $2} END{for (i in a) print a[i]}')
+             severity_count=$(awk 'SEVERITY:HIGH += $2}')
              echo $severity_count
              - |
              if [ $severity_count -neq 0 ]; then
