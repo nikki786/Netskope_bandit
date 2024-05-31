@@ -33,12 +33,4 @@ jobs:
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          ISSUE: ${{ github.event.issue.html_url }}
-         
-     
       
-      - name: Security check report artifacts
-        uses: actions/upload-artifact@v1
-        # if: failure()
-        with:
-         name: Security report
-         path: output/security_report.txt
