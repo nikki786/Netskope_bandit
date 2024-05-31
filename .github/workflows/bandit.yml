@@ -45,7 +45,7 @@ jobs:
              echo "File exists."
              fi
             
-             if [ $HighSeveritycount -neq 0 ]; then
+             if [ $HighSeveritycount>0 ]; then
              gh issue comment 12 --body "Block PR!"
              fi
              gh issue comment 12 --body "Successful"
