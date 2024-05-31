@@ -29,8 +29,9 @@ jobs:
           level: HIGH
         
       - name: Add Comment
-        run: gh issue comment $STATUS --body "Block PR!"
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         ISSUE: ${{ github.event.issue.html_url }}
+         ISSUE: ${{ github.event.issue.title }}
+        run: gh issue comment $STATUS --body "Block PR!"
+        
       
