@@ -46,9 +46,9 @@ jobs:
              fi
             
              if [ $HighSeveritycount>0 ]; then
-             gh issue comment 12 --body '<html><body><h3 style="color:red;">Block</h3></body></html>'
+             gh issue comment 12 --body '<html><body><h1>Block</h3></body></html>'
              else
-             gh issue comment 12 --body '<html><body><h3 style="color:green;">Successful</h3></body></html>'
+             gh issue comment 12 --body '<html><body><h1>Successful</h3></body></html>'
              fi
 
              
