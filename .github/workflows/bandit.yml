@@ -47,8 +47,9 @@ jobs:
             
              if [ $HighSeveritycount>0 ]; then
              gh issue comment 12 --body "Block PR!"
-             fi
+             else
              gh issue comment 12 --body "Successful"
+             fi
 
              
            
