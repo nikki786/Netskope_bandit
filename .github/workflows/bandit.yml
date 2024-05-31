@@ -40,7 +40,7 @@ jobs:
         run: |
              ls -la
              - |
-             if grep -q "\SEVERITY.HIGH\": ^[1-9]\d*$, "results.sarif"; then
+             if grep "\"SEVERITY.HIGH\": ^[1-9]\d*$", "results.sarif"; then
              gh issue comment 12 --body "Block PR!"
              fi
              - gh issue comment 12 --body "Successful"
