@@ -27,17 +27,18 @@ jobs:
           exit_zero: true # optional, default is DEFAULT
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
           level: HIGH
-      - name: 'Upload Artifact'
-        uses: actions/upload-artifact@v4
-        with:
-         name: my-artifact
-         path: ./my_file.txt
-         retention-days: 5
+   #   - name: 'Upload Artifact'
+       # uses: actions/upload-artifact@v4
+       # with:
+       #  name: my-artifact
+        # path: ./my_file.txt
+         #retention-days: 5
       - name: Add Comment
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          #ISSUE: ${{ github.event.number }}
         run: gh issue comment 12 --body "Block PR!"
+             cat results.sarif
              ls -la
              gh run view --job JOB_ID --log
              severity_count=$(egrep "Severity:\sHigh" my_file.txt | wc -l)
