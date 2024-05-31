@@ -41,11 +41,14 @@ jobs:
              ls -la
              if test -f results.sarif; then
              echo "File exists."
+             HighSeveritycount = $(egrep -c '\"SEVERITY.HIGH\": [^0]+' results.sarif)
+             echo "Number of occurrences with High severity issues "$HighSeveritycount
+             if [ $HighSeveritycount -neq 0 ]; then
+             gh issue comment 12 --body "Block PR!"
              fi
-             if egrep -c '\"SEVERITY.HIGH\": [^0]+' results.sarif; then
-             echo "SEVERITY.HIGH > 0"
-             fi
-             echo "SEVERITY.HIGH == 0"
+             gh issue comment 12 --body "Successful"
+
+             
            
            
           
