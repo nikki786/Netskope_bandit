@@ -37,7 +37,8 @@ jobs:
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          #ISSUE: ${{ github.event.number }}
-        run: gh issue comment 12 --body "Block PR!"
+        run: >-
+             gh issue comment 12 --body "Block PR!"
              cat results.sarif
              ls -la
              gh run view --job JOB_ID --log
