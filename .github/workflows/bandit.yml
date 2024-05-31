@@ -26,17 +26,18 @@ jobs:
         with: 
           exit_zero: true # optional, default is DEFAULT
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
-      - name: Add Comment
-        run: gh issue comment $STATUS --body "Block PR!"
-        env:
-         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-         ISSUE: ${{ github.event.issue.html_url }}
-         
       - name: Security check report artifacts
         uses: actions/upload-artifact@v1
         # if: failure()
         with:
          name: Security report
          path: output/security_report.txt
+      - name: Add Comment
+        run: gh issue comment $STATUS --body "Block PR!"
+        env:
+         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+         ISSUE: ${{ github.event.issue.html_url }}
+         
+     
       
 
