@@ -27,7 +27,7 @@ jobs:
           exit_zero: true # optional, default is DEFAULT
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information.
       - name: Add Comment
-        run: gh issue comment 12 --body "Block PR!"
+        run: gh issue comment $STATUS --body "Block PR!"
         env:
          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          #ISSUE: ${{ github.event.issue.html_url }}
