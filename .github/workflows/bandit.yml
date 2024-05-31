@@ -39,8 +39,8 @@ jobs:
          #ISSUE: ${{ github.event.number }}
         run: |
              ls -la
-             cat results.sarif
-             if grep -E "SEVERITY.HIGH": ^[1-9]\d*$, "results.sarif"; then
+             #cat results.sarif
+             if ls 
              echo "test"
              gh issue comment 12 --body "Block PR!"
              fi
