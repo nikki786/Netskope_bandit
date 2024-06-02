@@ -7,3 +7,7 @@ PyJWT
 pyotp
 qrcode
 requests
+pandas
+BeautifulSoup
+os
+json
